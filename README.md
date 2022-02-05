@@ -1,5 +1,5 @@
 # ValorantMenuChanger
-Tool that allows you to customize your Valorant menu page!
+Tool that allows you to customize your Valorant menu page with a custom mp4 video!
 
 # Installation
 Click [here](https://github.com/Kapilarny/ValorantMenuChanger/releases/latest) to get to release page and download ValorantMenuChanger.exe and run it!
