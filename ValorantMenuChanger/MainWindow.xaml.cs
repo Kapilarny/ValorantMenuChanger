@@ -18,6 +18,7 @@ using System.Drawing;
 
 using Microsoft.Win32;
 using System.Reflection;
+using IWshRuntimeLibrary;
 
 namespace ValorantMenuChanger
 {
@@ -62,7 +63,7 @@ namespace ValorantMenuChanger
         {
             ValorantSettings settings = new ValorantSettings();
 
-            if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt")) return null;
+            if (!System.IO.File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt")) return null;
 
             using (StreamReader sr = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt"))
             {
@@ -80,7 +81,7 @@ namespace ValorantMenuChanger
                 string videoPath;
                 string valorantPath;
 
-                if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt")) return;
+                if (!System.IO.File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt")) return;
 
                 using (StreamReader sr = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt"))
                 {
@@ -88,7 +89,7 @@ namespace ValorantMenuChanger
                     valorantPath = sr.ReadLine();
                 };
 
-                if (!File.Exists(videoPath)) return;
+                if (!System.IO.File.Exists(videoPath)) return;
                 if (!Directory.Exists(valorantPath + "/live")) return;
 
                 MenuChanger.ReplaceMenu(videoPath, valorantPath);
@@ -131,7 +132,7 @@ namespace ValorantMenuChanger
         private void SaveOptionsClick(object sender, RoutedEventArgs e)
         {
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger");
-            File.Create(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt").Close();
+            System.IO.File.Create(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt").Close();
 
 
             using (StreamWriter sw = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/ValorantMenuChanger/settings.txt"))
@@ -148,19 +149,30 @@ namespace ValorantMenuChanger
 
         private void RunOnStartupClick(object sender, RoutedEventArgs e)
         {
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey
-            ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            string startUpFolderPath =
+              Environment.GetFolderPath(Environment.SpecialFolder.Startup);
 
-            if (rk.GetValue("ValorantMenuChanger") == null)
+            if(System.IO.File.Exists(startUpFolderPath + "\\" +"ValorantMenuChanger.lnk"))
             {
-                rk.SetValue("ValorantMenuChanger", Assembly.GetEntryAssembly().Location);
-            }
-            else
-            {
-                rk.DeleteValue("ValorantMenuChanger", false);
+                System.IO.File.Delete(startUpFolderPath + "\\" + "ValorantMenuChanger.lnk");
+                new NotifyViewModel(notifyIcon).NotifyCommand.Execute("Saved! ValorantMenuChanger now doesn't run on startup!");
+                return;
             }
 
-            new NotifyViewModel(notifyIcon).NotifyCommand.Execute("Saved!");
+            WshShell wshShell = new WshShell();
+            IWshRuntimeLibrary.IWshShortcut shortcut;
+
+            shortcut =
+              (IWshRuntimeLibrary.IWshShortcut)wshShell.CreateShortcut(
+                startUpFolderPath + "\\" +
+                "ValorantMenuChanger.lnk");
+
+            shortcut.TargetPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppDomain.CurrentDomain.FriendlyName);
+            shortcut.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            shortcut.Description = "Launch My Application";
+            shortcut.Save();
+
+            new NotifyViewModel(notifyIcon).NotifyCommand.Execute("Saved! ValorantMenuChanger now runs on startup!");
         }
     }
 
