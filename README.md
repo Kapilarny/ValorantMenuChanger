@@ -9,8 +9,8 @@ Basically you could just replace the video file BUT Valorant on startup automati
 
 # Anti-Virus
 ### All Warnings are False-Positives
-There is an issue right now, that Windows Defender and other anti-virus tools might not allow for file to run.
-Its because i made Run on Startup function very suspicious, and im currently working on a fix for Version v1.0.1
+Windows Defender right now blocks this application, due to not beign downloaded many times.
+There are also some other warnings that some antiviruses might detect.
 
 # Risks
 ### I DO NOT TAKE RESPONSIBILITY FOR ANY BAN THAT MIGHT HAPPEN USING THIS TOOL
