@@ -88,6 +88,9 @@ namespace ValorantMenuChanger
                     valorantPath = sr.ReadLine();
                 };
 
+                if (!File.Exists(videoPath)) return;
+                if (!Directory.Exists(valorantPath + "/live")) return;
+
                 MenuChanger.ReplaceMenu(videoPath, valorantPath);
 
                 new NotifyViewModel(notifyIcon).NotifyCommand.Execute("Successfully patched the Menu!");
