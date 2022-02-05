@@ -16,9 +16,13 @@ There are also some other warnings that some antiviruses might detect.
 ### I DO NOT TAKE RESPONSIBILITY FOR ANY BAN THAT MIGHT HAPPEN USING THIS TOOL
 There may be a little risk of getting a ban since it's not an official software from Riot Games, but as far as i know there is no bans for this type of thing right now (Dm me on Discord if you somehow get one)
 
+# Images
+![example](ValorantMenuChanger/Resources/example.png)
+
 # Building
 #### If you want to build the project yourself you are gonna need atleast .Net Version v4.7.2 and Visual Studio.
 Open ValorantMenuChanger.sln and run Release with Any CPU, the app should build and run and the path to it should be in ValorantMenuChanger/bin/Release/ValorantMenuChanger.exe
 
-# Images
-![example](ValorantMenuChanger/Resources/example.png)
+# Contributing
+You can contribiute to this project if find any bugs, or anything.
+Just create a Pull Request, and ill probably commit it if its good.
