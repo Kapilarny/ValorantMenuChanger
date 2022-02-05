@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "de40d83a-9d21-4ae2-a3e3-177dda898b5d": {
+      "ProjectGuid": "de40d83a-9d21-4ae2-a3e3-177dda898b5d",
+      "DisplayName": "ValorantMenuChanger",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Różne pliki",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
