@@ -14,3 +14,6 @@ There may be a little risk of getting a ban since it's not an official software 
 # Building
 #### If you want to build the project yourself you are gonna need atleast .Net Version v4.7.2 and Visual Studio.
 Open ValorantMenuChanger.sln and run Release with Any CPU, the app should build and run and the path to it should be in ValorantMenuChanger/bin/Release/ValorantMenuChanger.exe
+
+# Images
+![example](ValorantMenuChanger/Resources/example.png)
