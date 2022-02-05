@@ -8,6 +8,7 @@ Click [here](https://github.com/Kapilarny/ValorantMenuChanger/releases/latest) t
 Basically you could just replace the video file BUT Valorant on startup automatically replaces that video file with the default one, so unless you want to run Valorant and than manually replace the video file every time, this tool is for you.
 
 # Anti-Virus
+### All Warnings are False-Positives
 There is an issue right now, that Windows Defender and other anti-virus tools might not allow for file to run.
 Its because i made Run on Startup function very suspicious, and im currently working on a fix for Version v1.0.1
 
