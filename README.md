@@ -9,7 +9,7 @@ Basically you could just replace the video file BUT Valorant on startup automati
 
 # Anti-Virus
 ### All Warnings are False-Positives
-Windows Defender right now blocks this application, due to not beign downloaded many times.
+Windows Defender right now blocks this application, due to not beign downloaded many times, when you get a SmartScreen popup just click More Info and Run it Anyways.
 There are also some other warnings that some antiviruses might detect.
 
 # Risks
