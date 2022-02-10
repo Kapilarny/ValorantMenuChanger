@@ -58,8 +58,8 @@ jobs:
     env:
       Solution_Name: ValorantMenuChanger.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       # Test_Project_Path: ValorantMenuChanger.Tests                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: ValorantMenuChanger   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      # Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Directory: ValorantMenuChanger.Package   # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: ValorantMenuChanger.Package.wapproj                # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
