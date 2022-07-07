@@ -14,7 +14,7 @@ There are also some other warnings that some antiviruses might detect.
 
 # Risks
 ### I DO NOT TAKE RESPONSIBILITY FOR ANY BAN THAT MIGHT HAPPEN USING THIS TOOL
-There may be a little risk of getting a ban since it's not an official software from Riot Games, but as far as i know there is no bans for this type of thing right now (Dm me on Discord if you somehow get one)
+There may be a little risk of getting a ban since it's not an official software from Riot Games, but as far as i know there is no bans for this type of thing right now (Dm me on Discord if you somehow get one: Kapilarny#8827)
 
 # Images
 ![example](ValorantMenuChanger/Resources/example.png)
