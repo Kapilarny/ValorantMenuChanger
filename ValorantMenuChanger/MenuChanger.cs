@@ -14,22 +14,6 @@ namespace ValorantMenuChanger
         {
             string destPath = valorantPath + "/live/ShooterGame/Content/Movies/Menu/HomeScreen.mp4";
 
-            string ep4hc = valorantPath + "/live/ShooterGame/Content/Movies/Menu/Riot_Mirrorverse_Ep4_Act2_HD_220209-H264.mp4";
-
-            if(File.Exists(ep4hc))
-            {
-                Console.WriteLine("ep4hc exists!");
-                // Patch ep4 main menu file
-                try
-                {
-                    File.Copy(videoPath, ep4hc, true);
-                }
-                catch (IOException e)
-                {
-                    Console.WriteLine(e.ToString());
-                }
-            }
-
             try
             {
                 File.Copy(videoPath, destPath, true);

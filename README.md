@@ -1,8 +1,6 @@
 # ValorantMenuChanger
 Tool that allows you to customize your Valorant menu page with a custom mp4 video!
 
-![Build Status](https://github.com/Kapilarny/ValorantMenuChanger/actions/workflows/dotnet.yml/badge.svg)
-
 # Installation
 Click [here](https://github.com/Kapilarny/ValorantMenuChanger/releases/latest) to get to release page and download ValorantMenuChanger.exe and run it!
 
@@ -22,7 +20,7 @@ There may be a little risk of getting a ban since it's not an official software 
 ![example](ValorantMenuChanger/Resources/example.png)
 
 # Building
-#### If you want to build the project yourself you are gonna need atleast .Net Version v5.0 and Visual Studio.
+#### If you want to build the project yourself you are gonna need atleast .Net Version v4.7.2 and Visual Studio.
 Open ValorantMenuChanger.sln and run Release with Any CPU, the app should build and run and the path to it should be in ValorantMenuChanger/bin/Release/ValorantMenuChanger.exe
 
 # Contributing
